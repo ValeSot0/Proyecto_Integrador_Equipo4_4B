@@ -351,9 +351,48 @@ SD(config)#
     <summary>
         Resumen de las configuraciones hechas en el Router RD
     </summary>
-    <pre>
-   ## AGREGA AQUI LAS CONFIGURACIONES , PUEDEN SER EN IMAGENES O COMO CODIGO
-    </pre>
+    Configurar Telnet
+    <pre><code>
+Router>enable
+Router#configure terminal
+Router(config)#hostname RD
+RD(config)#line vty 0 15
+RD(config-line)#password telnet
+RD(config-line)#login
+RD(config-line)#exit
+    </code></pre>
+
+Configurar SSH
+    <pre><code>
+RD#configure terminal
+RD(config)#ip domain-name cisco.com
+RD(config)#username admin password admin
+RD(config)#crypto key generate rsa
+How many bits in the modulus [512]: 1024
+RD(config)#line vty 0 15
+*Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
+RD(config-line)#transport input ssh
+RD(config-line)#login local
+RD(config-line)#exit
+RD(config)#
+    </code></pre>
+
+Configurar ipv4 y ipv6
+    <pre><code>
+RD>enable
+RD#configure terminal
+RD(config)#ipv6 unicast-routing
+RD(config)#interface g0/1
+RD(config-if)#ip address 172.16.0.98 255.255.255.224
+RD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
+RD(config-if)#ipv6 address FE80::1 link-local
+RD(config-if)#no shutdown
+
+RD(config-if)#
+*LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+RD(config-if)#description "toLanD"
+RD(config-if)#exit
+    </code></pre>
 
 </details>
 
