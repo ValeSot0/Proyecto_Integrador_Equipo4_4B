@@ -394,6 +394,9 @@ RD(config-if)#description "toLanD"
 RD(config-if)#exit
     </code></pre>
 
+
+</details>
+
 ## **Verificación de Conectividad**
 
 ### **Ping IPv6**
@@ -429,7 +432,3 @@ Ping statistics for 172.16.0.97:
     Approximate round trip times in milli-seconds:
         Minimum = 0ms, Maximum = 0ms, Average = 0ms
 </code></pre>
-
-</details>
-
-
