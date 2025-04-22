@@ -262,7 +262,8 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
     <summary>
        Resumen de las configuraciones hechas en el Switch SD
     </summary>
-    ###Configurar Telnet
+
+Configurar Telnet
     <pre><code>
 Switch>enable
 Switch>configure terminal
