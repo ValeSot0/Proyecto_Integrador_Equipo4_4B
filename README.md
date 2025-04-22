@@ -12,7 +12,8 @@
 - Karol Mera Ibarra (230110264)
 - Valeria Soto Hernandez (230110118)   
 ---
-## **Problematica**
+## **Problematica:**
+
 
 La gestión de pedidos en la florería se realiza de manera manual o con métodos poco organizados, lo que genera dificultades en el control de los pedidos, retrasos en las entregas y posibles errores en la administración de clientes, productos y pagos. Esto impacta negativamente en la eficiencia operativa del negocio y en la satisfacción del cliente, ya que no se cuenta con un sistema que permita organizar y automatizar los procesos de forma eficiente.
 ---
@@ -21,19 +22,18 @@ La gestión de pedidos en la florería se realiza de manera manual o con método
 Desarrollar un sistema informático que permita la gestión eficiente de la agenda de pedidos de una florería, clientes, productos y envíos a domicilio,  mediante una bases de datos, un lenguaje de programación; implementado en una red de comuputadora cliente servidor.
 
 ---
----
 
 ## **Alcance Técnico de la Topología**  
-1. ### **Asignación de Direcciones IP:**
+1. **Asignación de Direcciones IP:**
 
 - Se utilizará un bloque IPv4 privado clase C (172.16.0.0/24), dividido en subredes para organizar de forma eficiente el direccionamiento.
 
 
-2. ### **Soporte para IPv6:**
+2. **Soporte para IPv6:**
 
-Se integrará direccionamiento Global Unicast (2001:db8::/64) junto con Link-Local automático, permitiendo conectividad moderna y facilitando la futura migración completa a IPv6.
+- Se integrará direccionamiento Global Unicast (2001:db8::/64) junto con Link-Local automático, permitiendo conectividad moderna y facilitando la futura migración completa a IPv6.
 
-3. ### **Parámetros de Configuración:**
+3. **Parámetros de Configuración:**
 
 - Router: Se habilitará el enrutamiento IPv6, se establecerán contraseñas cifradas tipo Secret y se activará el acceso remoto vía SSH.
 
