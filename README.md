@@ -394,5 +394,42 @@ RD(config-if)#description "toLanD"
 RD(config-if)#exit
     </code></pre>
 
+## **Verificación de Conectividad**
+
+### **Ping IPv6**
+<pre><code>
+C:\>ping FE80::1
+
+Pinging FE80::1 with 32 bytes of data:
+
+Reply from FE80::1: bytes=32 time<1ms TTL=255
+Reply from FE80::1: bytes=32 time<1ms TTL=255
+Reply from FE80::1: bytes=32 time<1ms TTL=255
+Reply from FE80::1: bytes=32 time<1ms TTL=255
+
+Ping statistics for FE80::1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 1ms, Average = 0ms
+</code></pre>
+
+### **Ping IPv4**
+<pre><code>
+C:\>ping 172.16.0.97
+
+Pinging 172.16.0.97 with 32 bytes of data:
+
+Reply from 172.16.0.97: bytes=32 time<1ms TTL=255
+Reply from 172.16.0.97: bytes=32 time<1ms TTL=255
+Reply from 172.16.0.97: bytes=32 time<1ms TTL=255
+Reply from 172.16.0.97: bytes=32 time<1ms TTL=255
+
+Ping statistics for 172.16.0.97:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+</code></pre>
+
 </details>
+
 
