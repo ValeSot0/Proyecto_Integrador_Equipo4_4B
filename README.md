@@ -274,7 +274,7 @@ SD(config-line)#login
 SD(config-line)#exit
     </code></pre>
 
-  ###Configurar SSH
+Configurar SSH
     <pre><code>
 SD(config)#ip domain-name cisco.com
 SD(config)#username admin password admin
@@ -287,7 +287,7 @@ SD(config-line)#login local
 SD(config-line)#exit
     </code></pre>
 
-###Configurar modo dual
+Configurar modo dual
     <pre><code>
 SD>enable
 SD#configure terminal
@@ -296,7 +296,7 @@ SD(config)#end
 SD#
     </code></pre>
 
-###Configurar ipv4 y ipv6
+Configurar ipv4 y ipv6
     <pre><code>
 SD>enable
 SD#configure terminal
