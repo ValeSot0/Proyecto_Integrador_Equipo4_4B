@@ -224,18 +224,39 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
 ---
 ## **Configuraciones de los equipos (Switch y Router)**
 ### **Switch RD**
-1. **Asignar nombre del host**
-2. **Configurar Banner**
-3. **Configurar contraseñas:**
-   - Contraseña no cifrada  y cifrada 
-   - Contraseña de la consola
-   - Cifrar todas las contraseñas
-4. **Configurar acceso remoto:**
-   - Telnet
-   - SSH
-5. **Activar el uso de IPv4 e IPv6**
-6. **Configuración de la interface Vlan1**
+1. **Configurar el nombre de host**
 
+2. **Establecer el banner de bienvenida**
+
+3. **Configurar las contraseñas:**
+
+- Contraseña sin cifrar (Password)
+
+- Contraseña cifrada (Secret)
+
+- Contraseña de consola
+
+- Encriptar todas las contraseñas
+
+4. **Configurar el acceso remoto:**
+
+- Telnet
+
+- SSH
+
+5. **Habilitar el soporte para IPv4 e IPv6**
+
+6. **Configuración de la interfaz Vlan1:**
+
+- Asignar dirección IPv4 y máscara de subred
+
+- Asignar puerta de enlace predeterminada (default gateway)
+
+- Asignar dirección Global IPv6
+
+- Asignar dirección Link-Local IPv6
+
+- Agregar una descripción a la interfaz
 
 <details> 
     <summary>
@@ -247,18 +268,37 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
 </details>
 
 ### **Router RD**
-1. **Asignar nombre del host**
-2. **Configurar Banner**
-3. **Configurar contraseñas:**
-   - Contraseña no cifrada  y cifrada
-   - Contraseña de la consola
-   - Cifrar todas las contraseñas
-4. **Configurar acceso remoto:**
-   - Telnet
-   - SSH
-5. **Activar el enrutamiento IPv6**
-6. **Configuración de la interface GigabitEthernet:**
+1. **Configurar el nombre de host**
 
+2. **Establecer el banner de bienvenida**
+
+3. **Configurar las contraseñas:**
+
+- Contraseña sin cifrar (Password)
+
+- Contraseña cifrada (Secret)
+
+- Contraseña de consola
+
+- Encriptar todas las contraseñas
+
+4. **Configurar el acceso remoto:**
+
+- Telnet
+
+- SSH
+
+5. **Habilitar el enrutamiento IPv6**
+
+6. **Configuración de la interfaz GigabitEthernet:**
+
+- Asignar dirección IPv4 y máscara de subred
+
+- Asignar dirección Global IPv6
+
+- Asignar dirección Link-Local IPv6
+
+- Agregar una descripción a la interfaz
 
 <details> 
     <summary>
