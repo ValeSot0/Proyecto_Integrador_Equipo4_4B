@@ -9,7 +9,7 @@
 **Integrantes**:    
 - Abraham Calva (230110637)  
 - Freyra Wendy Martinez Martinez (230110434)  
-- Karol Mera Ibarra (230110264)
+- Carol Mera Ibarra (230110264)
 - Valeria Soto Hernandez (230110118)   
 ---
 ## **Problematica:**
@@ -262,9 +262,55 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
     <summary>
        Resumen de las configuraciones hechas en el Switch SD
     </summary>
-    <pre>
-    ## AGREGA AQUI LAS CONFIGURACIONES PUEDEN SER EN IMAGENES O COMO CODIGO
-    </pre>
+    ###Configurar Telnet
+    <pre><code>
+Switch>enable
+Switch>configure terminal
+Switch(config)#hostname SD
+SD(config)#line vty 0 15
+SD(config-line)#password telnet
+SD(config-line)#login
+SD(config-line)#exit
+    </code></pre>
+
+  ###Configurar SSH
+    <pre><code>
+SD(config)#ip domain-name cisco.com
+SD(config)#username admin password admin
+SD(config)#crypto key generate rsa
+How many bits in the modulus [512]: 1024
+SD(config)#line vty 0 15
+*Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
+SD(config-line)#transport input ssh
+SD(config-line)#login local
+SD(config-line)#exit
+    </code></pre>
+
+###Configurar modo dual
+    <pre><code>
+SD>enable
+SD#configure terminal
+SD(config)#sdm prefer dual-ipv4-and-ipv6 default
+SD(config)#end
+SD#
+    </code></pre>
+
+###Configurar ipv4 y ipv6
+    <pre><code>
+SD>enable
+SD#configure terminal
+SD(config)#interface vlan 1
+SD(config-if)#ip address 172.16.0.97 255.255.255.224
+SD(config-if)#ipv6 address 2001:db8:1::2/64 eui-64
+SD(config-if)#ipv6 address FE80::1 link-local
+SD(config-if)#no shutdown
+SD(config-if)#
+*LINK-5-CHANGED: Interface Vlan1, changed state to up
+SD(config-if)#description "toAdmin"
+SD(config-if)#exit
+SD(config)#
+    </code></pre>
+
 </details>
 
 ### **Router RD**
@@ -302,10 +348,11 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
 
 <details> 
     <summary>
-        Resumen de las configuraciones hechas en el Switch SD
+        Resumen de las configuraciones hechas en el Router RD
     </summary>
     <pre>
    ## AGREGA AQUI LAS CONFIGURACIONES , PUEDEN SER EN IMAGENES O COMO CODIGO
     </pre>
+
 </details>
 
