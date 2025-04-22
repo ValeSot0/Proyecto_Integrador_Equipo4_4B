@@ -235,18 +235,14 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
    - SSH
 5. **Activar el uso de IPv4 e IPv6**
 6. **Configuración de la interface Vlan1**
-   - Asignar IPv4 y máscara de subred
-   - Asignar el default gateway
-   - Asignar dirección Global IPv6
-   - Asignar dirección link-local IPv6
-   - Agregar una descripción
+
 
 <details> 
     <summary>
        Resumen de las configuraciones hechas en el Switch SD
     </summary>
     <pre>
-    ## AGREGA AQUI LAS CONFIGURACIONES AMOR, PUEDEN SER EN IMAGENES O COMO CODIGO
+    ## AGREGA AQUI LAS CONFIGURACIONES PUEDEN SER EN IMAGENES O COMO CODIGO
     </pre>
 </details>
 
@@ -262,17 +258,14 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
    - SSH
 5. **Activar el enrutamiento IPv6**
 6. **Configuración de la interface GigabitEthernet:**
-   - Asignar IPv4 y máscara de subred
-   - Asignar dirección Global IPv6
-   - Asignar dirección link-local IPv6
-   - Agregar una descripción
+
 
 <details> 
     <summary>
         Resumen de las configuraciones hechas en el Switch SD
     </summary>
     <pre>
-   ## AGREGA AQUI LAS CONFIGURACIONES AMOR, PUEDEN SER EN IMAGENES O COMO CODIGO
+   ## AGREGA AQUI LAS CONFIGURACIONES , PUEDEN SER EN IMAGENES O COMO CODIGO
     </pre>
 </details>
 
