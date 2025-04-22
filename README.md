@@ -1,4 +1,4 @@
-# Proyecto Integrador del 4° Semestre Grupo B - Ingeniería en TIC's, ITSOEH
+# Proyecto Integrador 4° Semestre Grupo B
 
 ## **Datos del Equipo**  
 **Institución**: Instituto Tecnológico Superior del Occidente del Estado de Hidalgo.  
