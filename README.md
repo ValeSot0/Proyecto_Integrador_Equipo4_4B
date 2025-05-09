@@ -263,13 +263,47 @@ La topología utilizada en este proyecto es la que se muestra en pantalla y que 
        Resumen de las configuraciones hechas en el Switch SD
     </summary>
 
-Configurar Telnet
+Configurar modo dual
+NOTA: Esto tiene que ser lo primero que se le hace a nuestro switch, ya que al reiniciarlo aceptamos que guarde los comandos ingreesados hasta el momento, en nuestro caso solo queremos que deje habilitado el modo dual de ipv4-ipv6
+    <pre><code>
+Switch>enable
+Switch#configure terminal
+Switch(config)#sdm prefer dual-ipv4-and-ipv6 default
+Switch(config)#end
+Switch#reload
+Switch# (Aceptar los siguientes comandos dando enter, y escribiendotelos la palabra YES cuando la pide)
+    </code></pre>
+
+Configuraciones basicas:
+
+Configurar nombre de host
     <pre><code>
 Switch>enable
 Switch>configure terminal
 Switch(config)#hostname SD
+    </code></pre>
+
+Agregar mensaje de bienvenida al switch
+    <pre><code>
+SD>enable
+SD#configure terminal
+SD(config)#banner motd "Bienvenidos al Switch D"
+    </code></pre>
+
+
+Configurar Consola
+    <pre><code>
+SD(config)#line console 0
+SD(config-line)#password console
+SD(config-line)#login
+SD(config-line)#exit
+    </code></pre>
+    
+Configurar Telnet
+    <pre><code>
 SD(config)#line vty 0 15
 SD(config-line)#password telnet
+SD(config-line)#transport input telnet
 SD(config-line)#login
 SD(config-line)#exit
     </code></pre>
@@ -287,22 +321,13 @@ SD(config-line)#login local
 SD(config-line)#exit
     </code></pre>
 
-Configurar modo dual
-    <pre><code>
-SD>enable
-SD#configure terminal
-SD(config)#sdm prefer dual-ipv4-and-ipv6 default
-SD(config)#end
-SD#
-    </code></pre>
-
 Configurar ipv4 y ipv6
     <pre><code>
 SD>enable
 SD#configure terminal
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
-SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
+SD(config-if)#ipv6 address 2001:db8:2:d::/64 eui-64
 SD(config-if)#ipv6 address FE80::1 link-local
 SD(config-if)#no shutdown
 SD(config-if)#
@@ -351,13 +376,36 @@ SD(config)#
     <summary>
         Resumen de las configuraciones hechas en el Router RD
     </summary>
-    Configurar Telnet
+
+Configuraciones basicas:
+Configurar nombre de host
     <pre><code>
 Router>enable
-Router#configure terminal
+Router>configure terminal
 Router(config)#hostname RD
+    </code></pre>
+
+Agregar mensaje de bienvenida al router
+    <pre><code>
+RD>enable
+RD#configure terminal
+RD(config)#banner motd "Bienvenidos al Router D"
+    </code></pre>
+
+
+Configurar Consola
+    <pre><code>
+RD(config)#line console 0
+RD(config-line)#password console
+RD(config-line)#login
+RD(config-line)#exit
+    </code></pre>
+
+Configurar Telnet
+    <pre><code>
 RD(config)#line vty 0 15
 RD(config-line)#password telnet
+RD(config-line)#transport input telnet
 RD(config-line)#login
 RD(config-line)#exit
     </code></pre>
