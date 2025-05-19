@@ -14,7 +14,6 @@
 ---
 ## **Problematica:**
 
-
 La gestión de pedidos en la florería se realiza de manera manual o con métodos poco organizados, lo que genera dificultades en el control de los pedidos, retrasos en las entregas y posibles errores en la administración de clientes, productos y pagos. Esto impacta negativamente en la eficiencia operativa del negocio y en la satisfacción del cliente, ya que no se cuenta con un sistema que permita organizar y automatizar los procesos de forma eficiente.
 ---
 ## **Objetivo General**
@@ -22,7 +21,6 @@ La gestión de pedidos en la florería se realiza de manera manual o con método
 Desarrollar un sistema informático que permita la gestión eficiente de la agenda de pedidos de una florería, clientes, productos y envíos a domicilio,  mediante una bases de datos, un lenguaje de programación; implementado en una red de comuputadora cliente servidor.
 
 ---
-
 ## **Alcance Técnico de la Topología**  
 1. **Asignación de Direcciones IP:**
 
@@ -337,6 +335,68 @@ SD(config-if)#exit
 SD(config)#
     </code></pre>
 
+Resumen de configuraciones
+<pre><code>
+Switch>enable
+Switch#configure terminal
+Switch(config)#sdm prefer dual-ipv4-and-ipv6 default
+Switch(config)#end
+Switch#reload
+Switch# (Aceptar los siguientes comandos dando enter, y escribiendotelos la palabra YES cuando la pide)
+Switch>enable
+Switch>configure terminal
+Switch(config)#hostname SD
+SD(config)#banner motd "Bienvenidos al Switch D"
+SD(config)#enable password cisco
+SD(config)#enable secret tics
+SD(config)#service password-encryption
+SD(config)#line console 0
+SD(config-line)#password console
+SD(config-line)#login
+SD(config-line)#exit
+SD(config)#line vty 0 15
+SD(config-line)#password telnet
+SD(config-line)#transport input telnet ssh
+SD(config-line)#login
+SD(config-line)#exit
+SD(config)#ip domain-name cisco.com
+SD(config)#username admin password admin
+SD(config)#crypto key generate rsa
+How many bits in the modulus [512]: 1024
+SD(config)#line vty 0 15
+*Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
+SD(config-line)#transport input telnet ssh
+SD(config-line)#login local
+SD(config-line)#exit
+SD(config)#interface vlan 1
+SD(config-if)#ip address 172.16.0.97 255.255.255.224
+SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
+SD(config-if)#ipv6 address FE80::2 link-local
+SD(config-if)#no shutdown
+SD(config-if)#
+*LINK-5-CHANGED: Interface Vlan1, changed state to up
+SD(config-if)#description "toAdmin"
+SD(config-if)#exit
+</code></pre>
+Posibles comandos de show
+<code><pre>
+show running-config
+show ipv6 interface brief
+show ip interface brief
+show sdm prefer
+show crypto key mypubkey rsa
+show ssh
+show running-config | include password
+show running-config | include username
+show users
+show startup-config
+show ip route
+show ipv6 route
+show running-config | include hostname
+show running-config | include ip domain-name
+show interfaces description
+
+</code></pre>
 </details>
 
 ### **Router RD**
