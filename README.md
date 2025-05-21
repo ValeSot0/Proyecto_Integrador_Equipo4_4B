@@ -326,7 +326,7 @@ SD#configure terminal
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
 SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
-SD(config-if)#ipv6 address FE80::1 link-local
+SD(config-if)#ipv6 address FE80::2 link-local
 SD(config-if)#no shutdown
 SD(config-if)#
 *LINK-5-CHANGED: Interface Vlan1, changed state to up
@@ -371,7 +371,7 @@ SD(config-line)#exit
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
 SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
-SD(config-if)#ipv6 address FE80::1 link-local
+SD(config-if)#ipv6 address FE80::2 link-local
 SD(config-if)#no shutdown
 SD(config-if)#
 *LINK-5-CHANGED: Interface Vlan1, changed state to up
