@@ -269,7 +269,7 @@ Switch#configure terminal
 Switch(config)#sdm prefer dual-ipv4-and-ipv6 default
 Switch(config)#end
 Switch#reload
-Switch# (Aceptar los siguientes comandos dando enter, y escribiendotelos la palabra YES cuando la pide)
+Switch#
     </code></pre>
 
 Configuraciones basicas:
@@ -301,7 +301,7 @@ Configurar Telnet
     <pre><code>
 SD(config)#line vty 0 15
 SD(config-line)#password telnet
-SD(config-line)#transport input telnet
+SD(config-line)#transport input telnet ssh
 SD(config-line)#login
 SD(config-line)#exit
     </code></pre>
@@ -314,7 +314,7 @@ SD(config)#crypto key generate rsa
 How many bits in the modulus [512]: 1024
 SD(config)#line vty 0 15
 *Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
-SD(config-line)#transport input ssh
+SD(config-line)#transport input telnet ssh
 SD(config-line)#login local
 SD(config-line)#exit
     </code></pre>
