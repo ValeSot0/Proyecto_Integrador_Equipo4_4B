@@ -325,7 +325,7 @@ SD>enable
 SD#configure terminal
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
-SD(config-if)#ipv6 address 2001:db8:2:d::/64 eui-64
+SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
 SD(config-if)#ipv6 address FE80::1 link-local
 SD(config-if)#no shutdown
 SD(config-if)#
@@ -371,7 +371,7 @@ SD(config-line)#exit
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
 SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
-SD(config-if)#ipv6 address FE80::2 link-local
+SD(config-if)#ipv6 address FE80::1 link-local
 SD(config-if)#no shutdown
 SD(config-if)#
 *LINK-5-CHANGED: Interface Vlan1, changed state to up
@@ -465,7 +465,7 @@ Configurar Telnet
     <pre><code>
 RD(config)#line vty 0 15
 RD(config-line)#password telnet
-RD(config-line)#transport input telnet
+RD(config-line)#transport input telnet ssh
 RD(config-line)#login
 RD(config-line)#exit
     </code></pre>
@@ -479,7 +479,7 @@ RD(config)#crypto key generate rsa
 How many bits in the modulus [512]: 1024
 RD(config)#line vty 0 15
 *Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
-RD(config-line)#transport input ssh
+RD(config-line)#transport input telnet ssh
 RD(config-line)#login local
 RD(config-line)#exit
 RD(config)#
@@ -490,7 +490,7 @@ Configurar ipv4 y ipv6
 RD>enable
 RD#configure terminal
 RD(config)#ipv6 unicast-routing
-RD(config)#interface g0/1
+RD(config)#interface g0/0
 RD(config-if)#ip address 172.16.0.98 255.255.255.224
 RD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
 RD(config-if)#ipv6 address FE80::1 link-local
@@ -502,6 +502,38 @@ RD(config-if)#description "toLanD"
 RD(config-if)#exit
     </code></pre>
 
+Resumen de Configuraciones 
+    <pre><code>
+Router>enable
+Router>configure terminal
+Router(config)#hostname RD
+RD(config)#banner motd "Bienvenidos al Router D"
+RD(config)#line console 0
+RD(config-line)#password console
+RD(config-line)#login
+RD(config-line)#exit
+RD#configure terminal
+RD(config)#ip domain-name cisco.com
+RD(config)#username admin password admin
+RD(config)#crypto key generate rsa
+How many bits in the modulus [512]: 1024
+RD(config)#line vty 0 15
+*Mar  1 0:07:27.932: SSH-5-ENABLED: SSH 1.99 has been enabled
+RD(config-line)#transport input telnet ssh
+RD(config-line)#login local
+RD(config-line)#exit
+RD(config)#ipv6 unicast-routing
+RD(config)#interface g0/0
+RD(config-if)#ip address 172.16.0.98 255.255.255.224
+RD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
+RD(config-if)#ipv6 address FE80::1 link-local
+RD(config-if)#no shutdown
+
+RD(config-if)#
+*LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+RD(config-if)#description "toLanD"
+RD(config-if)#exit
+    </pre></code>
 
 </details>
 
