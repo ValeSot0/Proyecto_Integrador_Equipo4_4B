@@ -288,6 +288,12 @@ SD#configure terminal
 SD(config)#banner motd "Bienvenidos al Switch D"
     </code></pre>
 
+Agregar contraseñas al Switch:
+    <pre><code>
+SD(config)#enable password cisco
+SD(config)#enable secret tics
+SD(config)#service password-encryption
+    </pre></code>
 
 Configurar Consola
     <pre><code>
@@ -342,7 +348,8 @@ Switch#configure terminal
 Switch(config)#sdm prefer dual-ipv4-and-ipv6 default
 Switch(config)#end
 Switch#reload
-Switch# (Aceptar los siguientes comandos dando enter, y escribiendotelos la palabra YES cuando la pide)
+Switch# (Aceptar los siguientes comandos dando enter, y escribiendotelos la palabra YES cuando la pide
+    
 Switch>enable
 Switch>configure terminal
 Switch(config)#hostname SD
@@ -350,15 +357,18 @@ SD(config)#banner motd "Bienvenidos al Switch D"
 SD(config)#enable password cisco
 SD(config)#enable secret tics
 SD(config)#service password-encryption
+    
 SD(config)#line console 0
 SD(config-line)#password console
 SD(config-line)#login
 SD(config-line)#exit
+    
 SD(config)#line vty 0 15
 SD(config-line)#password telnet
 SD(config-line)#transport input telnet ssh
 SD(config-line)#login
 SD(config-line)#exit
+    
 SD(config)#ip domain-name cisco.com
 SD(config)#username admin password admin
 SD(config)#crypto key generate rsa
@@ -368,13 +378,12 @@ SD(config)#line vty 0 15
 SD(config-line)#transport input telnet ssh
 SD(config-line)#login local
 SD(config-line)#exit
+    
 SD(config)#interface vlan 1
 SD(config-if)#ip address 172.16.0.97 255.255.255.224
 SD(config-if)#ipv6 address 2001:db8:1:d::/64 eui-64
 SD(config-if)#ipv6 address FE80::2 link-local
 SD(config-if)#no shutdown
-SD(config-if)#
-*LINK-5-CHANGED: Interface Vlan1, changed state to up
 SD(config-if)#description "toAdmin"
 SD(config-if)#exit
 </code></pre>
