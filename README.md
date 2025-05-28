@@ -12,6 +12,23 @@
 - Carol Mera Ibarra (230110264)
 - Valeria Soto Hernandez (230110118)   
 ---
+
+## **Resumen ejecutivo**
+El proyecto integrador tuvo como objetivo desarrollar un sistema de gestión de pedidos para una florería, modernizando sus procesos operativos y mejorando la atención al cliente. La florería enfrentaba problemas de desorganización y errores por la administración manual de pedidos.
+
+Se diseñó un sistema automatizado para gestionar clientes, productos, pedidos, pagos y entregas, utilizando Visual Studio 2022, C#, el patrón MVC y SQL Server. La metodología Scrum facilitó una planificación ágil y validaciones continuas por parte del cliente.
+
+El sistema, implementado en una arquitectura cliente-servidor, incluye módulos específicos para la gestión integral de la operación diaria. Como resultado, se optimizaron los procesos, redujeron los errores humanos y se mejoró la disponibilidad de información. El proyecto representa un avance significativo hacia la transformación digital de la florería, aportando valor operativo y estratégico.
+---
+
+## **Introducción**
+Este proyecto integrador tuvo como objetivo el desarrollo de un sistema informático para la gestión de pedidos en una florería, con el fin de automatizar procesos que antes se realizaban manualmente y que generaban errores, retrasos y desorganización.
+El impacto de este proyecto es en distintos ámbitos: en la sociedad, mejora el servicio al cliente; en el comercio, apoya la digitalización de pequeños negocios; en la política, se alinea con iniciativas de transformación digital; en la industria, moderniza sectores tradicionales; y en la educación, aplica conocimientos técnicos en un caso real.
+---
+
+
+
+
 ## **Problematica:**
 
 La gestión de pedidos en la florería se realiza de manera manual o con métodos poco organizados, lo que genera dificultades en el control de los pedidos, retrasos en las entregas y posibles errores en la administración de clientes, productos y pagos. Esto impacta negativamente en la eficiencia operativa del negocio y en la satisfacción del cliente, ya que no se cuenta con un sistema que permita organizar y automatizar los procesos de forma eficiente.
