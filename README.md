@@ -216,7 +216,7 @@ Desarrollar un sistema informático que permita la gestión eficiente de la agen
 --- 
 
 ## **Topología**
-<img src="img/topologia.jpg" height="500px" />    
+<img src="img/Topologia2.jpg" height="500px" />    
 La topología utilizada en este proyecto es la que se muestra en pantalla y que tambien puedes encontrar en: <a href="conexiones ipv4-ipv6.pkt">Conexiones ipv4-ipv6.pkt</a>  
 
 ---
