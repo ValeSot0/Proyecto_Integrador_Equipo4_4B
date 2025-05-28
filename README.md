@@ -913,8 +913,11 @@ Se configuró un banner de advertencia para mostrar un mensaje a los usuarios al
 </table>
 
 ## **Pruebas de conectividad**
-Pruebas de ping
+Prueba de ping ipv4
+<img src="img/ping4.jpg" height="500px" />
 
+Prueba de ping ipv6
+<img src="img/ping6.jpg" height="500px" />
 
 ## **Inventario de equipos de red**
 <table>
