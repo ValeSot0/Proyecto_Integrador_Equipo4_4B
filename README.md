@@ -704,7 +704,7 @@ Se configuró un banner de advertencia para mostrar un mensaje a los usuarios al
 
 ---
 
-### Configuración de Equipos de Red con Comentarios
+### Configuraciones básicas de los equipos de red
 
 <h3>Tabla: Switch (SD)</h3>
 <table>
@@ -912,6 +912,81 @@ Se configuró un banner de advertencia para mostrar un mensaje a los usuarios al
     </tbody>
 </table>
 
+## **Pruebas de conectividad**
+Pruebas de ping
+
+
+## **Inventario de equipos de red**
+<table>
+    <thead>
+        <tr>
+            <th>Dispositivo</th>
+            <th>Marca / Modelo</th>
+            <th>Tipo</th>
+            <th>Características Técnicas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Router</strong></td>
+            <td>Cisco 1941 (ISR G2 Series)</td>
+            <td>Router</td>
+            <td>
+                <ul>
+                    <li>2 puertos GigabitEthernet</li>
+                    <li>Soporte para IPv4 e IPv6</li>
+                    <li>SSH, Telnet, encriptación</li>
+                    <li>DRAM: 512 MB (expansible)</li>
+                    <li>Flash: 256 MB</li>
+                    <li>Ruteo dinámico y estático</li>
+                    <li>CLI vía consola, Telnet o SSH</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Switch</strong></td>
+            <td>Cisco Catalyst 2960-24TT</td>
+            <td>Switch Capa 2</td>
+            <td>
+                <ul>
+                    <li>24 puertos FastEthernet 10/100 Mbps</li>
+                    <li>2 puertos uplink 10/100/1000</li>
+                    <li>Soporte para VLANs</li>
+                    <li>SSH y Telnet habilitables</li>
+                    <li>SDM prefer dual-stack IPv4/IPv6</li>
+                    <li>Gestión por consola o remoto</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>PC Servidor</strong></td>
+            <td>Estación genérica (Ej. Dell OptiPlex 5000)</td>
+            <td>PC (Servidor)</td>
+            <td>
+                <ul>
+                    <li>Procesador Intel Core i5 (6ª gen o superior)</li>
+                    <li>8 GB de RAM mínimo</li>
+                    <li>SSD 256 GB</li>
+                    <li>Windows 10/11 Pro</li>
+                    <li>Visual Studio 2022 + SQL Server instalado</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Clientes</strong></td>
+            <td>Laptops o PCs genéricos</td>
+            <td>Estaciones cliente</td>
+            <td>
+                <ul>
+                    <li>Procesador Intel Core i3 o superior</li>
+                    <li>4 GB de RAM mínimo</li>
+                    <li>Windows 10/11</li>
+                    <li>Conectividad Ethernet/Wi-Fi</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## **Resultados**
 
