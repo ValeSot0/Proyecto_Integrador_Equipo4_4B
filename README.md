@@ -912,3 +912,26 @@ Se configuró un banner de advertencia para mostrar un mensaje a los usuarios al
     </tbody>
 </table>
 
+
+## **Resultados**
+
+## **Trabajos futuros**
+
+## **Conclusiones**
+El proyecto permitió desarrollar un sistema informático eficiente para la gestión de pedidos en una florería, mejorando la organización, reduciendo errores y agilizando la atención al cliente. La infraestructura de red fue clave para lograr estos objetivos, al implementar una topología cliente-servidor confiable y segura.
+
+Se diseñó una red bien estructurada con direccionamiento IPv4 y soporte para IPv6, permitiendo conectividad moderna y escalabilidad futura. Además, se aplicaron medidas de seguridad en los equipos de red, como contraseñas encriptadas, acceso remoto por SSH, banners de advertencia y configuración de VLANs.
+El uso de protocolos como TCP/IP y SSH, junto con la segmentación de subredes /27, facilitó el control del tráfico y la administración de dispositivos. Estas configuraciones no solo garantizaron el funcionamiento del sistema, sino que también reforzaron el aprendizaje técnico del equipo y prepararon la red para crecer a futuro.
+En resumen, el proyecto integró de forma efectiva el desarrollo de software con una red sólida y segura, sentando bases firmes para la transformación digital del negocio.
+
+## **Fuentes de información**
+Referencias en formato IEEE
+[1] A. S. Tanenbaum and D. J. Wetherall, Redes de computadoras, 5ª ed., México: Pearson, 2010.
+
+[2] B. A. Forouzan, Data Communications and Networking, 5th ed., New York: McGraw-Hill, 2017.
+
+[3] Cisco Networking Academy, “Cisco NetAcad: Cursos y formación en redes,” [En línea]. Disponible en: https://www.netacad.com. [Accedido: 28-may-2025].
+
+[4] Microsoft, “Documentación de ASP.NET Core,” Microsoft Learn, [En línea]. Disponible en: https://learn.microsoft.com/es-es/aspnet/core/. [Accedido: 28-may-2025].
+
+[5] Microsoft, “SQL Server documentation,” Microsoft Learn, [En línea]. Disponible en: https://learn.microsoft.com/es-es/sql/sql-server. [Accedido: 28-may-2025].
