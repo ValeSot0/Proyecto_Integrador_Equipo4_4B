@@ -14,9 +14,7 @@
 ---
 
 ## **Resumen ejecutivo**
-El proyecto integrador tuvo como objetivo desarrollar un sistema de gestión de pedidos para una florería, modernizando sus procesos operativos y mejorando la atención al cliente. La florería enfrentaba problemas de desorganización y errores por la administración manual de pedidos.
-
-Se diseñó un sistema automatizado para gestionar clientes, productos, pedidos, pagos y entregas, utilizando Visual Studio 2022, C#, el patrón MVC y SQL Server. La metodología Scrum facilitó una planificación ágil y validaciones continuas por parte del cliente.
+El proyecto integrador tuvo como objetivo desarrollar un sistema de gestión de pedidos para una florería, modernizando sus procesos operativos y mejorando la atención al cliente. La florería enfrentaba problemas de desorganización y errores por la administración manual de pedidos. Se diseñó un sistema automatizado para gestionar clientes, productos, pedidos, pagos y entregas, utilizando Visual Studio 2022, C#, el patrón MVC y SQL Server. La metodología Scrum facilitó una planificación ágil y validaciones continuas por parte del cliente.
 El sistema, implementado en una arquitectura cliente-servidor, incluye módulos específicos para la gestión integral de la operación diaria. Como resultado, se optimizaron los procesos, redujeron los errores humanos y se mejoró la disponibilidad de información. El proyecto representa un avance significativo hacia la transformación digital de la florería, aportando valor operativo y estratégico.
 ---
 
@@ -633,3 +631,284 @@ Ping statistics for 172.16.0.97:
     Approximate round trip times in milli-seconds:
         Minimum = 0ms, Maximum = 0ms, Average = 0ms
 </code></pre>
+
+
+## **Protocolos y estándares empleados**
+<table>
+  <thead>
+    <tr>
+      <th>Capa OSI</th>
+      <th>Protocolo / Estándar</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Capa 7: Aplicación</strong></td>
+      <td><strong>HTTP / HTTPS</strong></td>
+      <td>Utilizado por los navegadores cliente para enviar solicitudes y recibir respuestas desde el servidor web donde se aloja el sistema (si se publica como app web con IIS). HTTPS garantiza una conexión cifrada.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>TDS (Tabular Data Stream)</strong></td>
+      <td>Protocolo usado por SQL Server para la comunicación entre la aplicación y la base de datos. Se emplea cuando la app se conecta mediante ADO.NET o Entity Framework.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 6: Presentación</strong></td>
+      <td><strong>UTF-8 / ASCII</strong></td>
+      <td>Estándares de codificación de caracteres para mostrar correctamente textos (nombres, productos, direcciones).</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 5: Sesión</strong></td>
+      <td><strong>TCP/IP Session Management</strong></td>
+      <td>Gestiona las sesiones entre cliente y servidor para mantener una comunicación estable y continua durante el uso del sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 4: Transporte</strong></td>
+      <td><strong>TCP (Transmission Control Protocol)</strong></td>
+      <td>Garantiza la entrega ordenada y confiable de los datos entre los clientes y el servidor de base de datos o aplicación.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 3: Red</strong></td>
+      <td><strong>IP (Internet Protocol)</strong></td>
+      <td>Protocolo de direccionamiento que permite identificar cada dispositivo en la red (el servidor tiene una IP fija).</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 2: Enlace de datos</strong></td>
+      <td><strong>Ethernet (IEEE 802.3)</strong></td>
+      <td>Protocolo estándar de red LAN utilizado en la comunicación por cable entre clientes, switch y servidor.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 1: Física</strong></td>
+      <td><strong>UTP Cat5e/Cat6</strong></td>
+      <td>Cables de red utilizados para la transmisión física de datos entre dispositivos. Cat6 es preferible para velocidades de hasta 1 Gbps.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## **Implementación de seguridad en los equipos de red**
+### Acceso remoto seguro (SSH)
+Se generaron claves RSA para habilitar conexiones seguras vía SSH.  
+Se estableció el acceso remoto solo a través de Telnet y SSH, aunque se recomienda en producción deshabilitar Telnet por seguridad.
+
+### Contraseñas seguras
+Se configuraron contraseñas para consola (console) y líneas VTY (telnet).  
+Se usó el comando `enable secret` para establecer una contraseña encriptada de acceso privilegiado.
+
+### Encriptación de contraseñas
+Se habilitó `service password-encryption` para evitar que las contraseñas se almacenen en texto plano en la configuración.
+
+### Mensaje de advertencia (Banner MOTD)
+Se configuró un banner de advertencia para mostrar un mensaje a los usuarios al acceder al equipo, indicando el uso autorizado.
+
+---
+
+### Configuración de Equipos de Red con Comentarios
+
+<h3>Tabla: Switch (SD)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Dispositivo</th>
+            <th>Comando</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SD</td>
+            <td>hostname SD</td>
+            <td>Cambia el nombre del dispositivo a "SD"</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>banner motd "Bienvenidos al Switch D"</td>
+            <td>Muestra un mensaje de advertencia al acceder</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>enable password cisco</td>
+            <td>Establece contraseñas de acceso privilegiado (una oculta)</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>enable secret tics</td>
+            <td>Establece contraseñas de acceso privilegiado (una oculta)</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>service password-encryption</td>
+            <td>Encripta todas las contraseñas del sistema</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>line console 0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>password console</td>
+            <td>Establece contraseña para acceso por consola</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>line vty 0 15</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>password telnet</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>transport input telnet ssh</td>
+            <td>Configura acceso remoto vía Telnet y SSH</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>ip domain-name cisco.com</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>username admin password admin</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>crypto key generate rsa</td>
+            <td>Configura dominio, usuario y clave para habilitar SSH</td>
+        </tr>
+        <tr>
+            <td>SD</td>
+            <td>interface vlan 1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ip address 172.16.0.97 255.255.255.224</td>
+            <td>Configura interfaz VLAN 1 con direcciones IPv4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ipv6 address 2001:db8:1:d::/64 eui-64</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ipv6 address FE80::2 link-local</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>description "toAdmin"</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>no shutdown</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Tabla: Router (RD)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Dispositivo</th>
+            <th>Comando</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>RD</td>
+            <td>hostname RD</td>
+            <td>Cambia el nombre del router a "RD"</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>banner motd "Bienvenidos al Router D"</td>
+            <td>Muestra advertencia al acceder</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>line console 0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>password console</td>
+            <td>Establece contraseña para acceso por consola</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>line vty 0 15</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>password telnet</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>transport input telnet ssh</td>
+            <td>Configura acceso remoto vía Telnet y SSH</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>ip domain-name cisco.com</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>username admin password admin</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>crypto key generate rsa</td>
+            <td>Habilita SSH con clave RSA</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>ipv6 unicast-routing</td>
+            <td>Habilita el enrutamiento IPv6 en el router</td>
+        </tr>
+        <tr>
+            <td>RD</td>
+            <td>interface g0/0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ip address 172.16.0.98 255.255.255.224</td>
+            <td>Configura interfaz g0/0 con direcciones IPv4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ipv6 address 2001:db8:1:d::/64 eui-64</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>ipv6 address FE80::1 link-local</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>description "toLanD"</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>no shutdown</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
